@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cke1412‘s blog</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+            display: flex;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #main {
+            order: 1;
+            padding: 0 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #sidebar {
+            flex-shrink: 0;
+            width: 230px;
+            background-color: #222;
+            color: #999;
+        }
+
+        #sidebar a {
+            color: #999;
+        }
+
+        #profile {
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        #profile h1 {
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+
+        #avatar img {
+            width: 150px;
+        }
+
+        #navigator {
+            padding-left: 40px;
+            line-height: 30px;
+        }
+
+        section {
+            flex-grow: 1;
+            padding-bottom: 30px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            font-weight: normal;
+        }
+
+        section p {
+            line-height: 180%;
+        }
+
+        article {
+            position: relative;
+            padding-bottom: 30px;
+            border-bottom: solid 1px #ccc;
+        }
+
+        article a {
+            color: #333;
+        }
+
+        .pubtime {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        footer {
+            text-align: center;
+            line-height: 60px;
+            border-top: solid 1px #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <section>
+            <!--for article-->
+            <article>
+                <h2>my first article </h2>
+                <p>to end...contentto end...contentto end...contentto end...contentto end...contentto end...contentto
+                    end...contentto end...contentto end...contentto end...contentto end...contentto end...contentto
+                    end...contentto
+                    end...contentto end...contentto end...contentto end...contentto end...contentto end...contentto
+                    end...contentto
+                    end...content</p>
+                <div class="pubtime">publish time:<em>2022-7-23</em></div>
+                <div class="readmore"><a href="articles/01.html">Detailed reading</a></div>
+            </article>
+            <article>
+                <h2>my second article </h2>
+                <p>to end...contentto end...contentto end...contentto end...contentto end...contentto end...contentto
+                    end...contentto end...contentto end...contentto end...contentto end...contentto end...contentto
+                    end...contentto
+                    end...contentto end...contentto end...contentto end...contentto end...contentto end...contentto
+                    end...contentto
+                    end...content</p>
+                <div class="pubtime">publish time:<em>2022-7-23</em></div>
+                <div class="readmore"><a href="articles/02.html">Detailed reading</a></div>
+            </article>
+            <article>
+                <h2>my third article </h2>
+                <p>to end...contentto end...contentto end...contentto end...contentto end...contentto end...contentto
+                    end...contentto end...contentto end...contentto end...contentto end...contentto end...contentto
+                    end...contentto
+                    end...contentto end...contentto end...contentto end...contentto end...contentto end...contentto
+                    end...contentto
+                    end...content</p>
+                <div class="pubtime">publish time:<em>2022-7-23</em></div>
+                <div class="readmore"><a href="articles/03.html">Detailed reading</a></div>
+            </article>
+        </section>
+        <footer>
+            &copy;2022 - my blog*
+        </footer>
+    </div>
+
+    <div id="sidebar">
+        <div id="profile">
+            <div id="avatar">
+                <a href="about.html"><img src="static/image/fire.png"></a>
+            </div>
+            <h1>my blog</h1>
+        </div>
+        <div><a href="index.html">home</a></div>
+        <div><a href="friend.html">linker</a></div>
+    </div>
+    <script type="text/javascript">
+        const pubtimeEls = document.querySelectorAll('.pubtime em');
+        pubtimeEls.forEach((el) => {
+            const date = new Date(el.innerHTML);
+            el.innerHTML = `${date.getMonth() + 1}.${date.getDate()}, ${date.getFullYear()}`;
+        });
+
+        let title = document.title;
+        window.addEventListener('blur', () => {
+            document.title = 'remember back...';
+        });
+        window.addEventListener('focus', () => {
+            document.title = title;
+        });
+    </script>
+</body>
+
+</html>
